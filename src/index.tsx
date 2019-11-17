@@ -4,7 +4,7 @@ import * as ReactDOM from 'react-dom';
 
 // Import components
 import { Calculator } from './components/Calculator/Calculator';
-import { ICalculatorConfig, ICalculatorModel, CalculatorModel } from './components/Calculator/CalculatorModel';
+import { ICalculatorModel, CalculatorModel } from './components/Calculator/CalculatorModel';
 
 // Import styles
 import "./styles/main.scss";
@@ -15,12 +15,7 @@ export class App extends React.Component {
     constructor(props) {
         super(props);
 
-        const calculatorConfig: ICalculatorConfig = {
-            loanAmount: 10000,
-            loanDuration: 4
-        };
-
-        this.calculatorModel = new CalculatorModel(calculatorConfig);
+        this.calculatorModel = new CalculatorModel();
     }
 
 
