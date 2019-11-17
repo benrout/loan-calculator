@@ -1,0 +1,32 @@
+.loan-product {
+    // background-color: #ebebeb;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.loan-product__field {
+    margin-bottom: 16px;
+}
+
+.loan-product__field-label {
+    margin-bottom: 0;
+    margin-right: 16px;
+}
+
+.loan-product__field-input {
+    margin-right: 16px;
+}
+
+.loan-product__field-error {
+    color: red;
+}
+
+.loan-product__table {
+    width: 100%;
+    border: 1px solid black;
+    margin-bottom: 16px;
+
+    tr:nth-child(even) {
+        background-color: #ebebeb;
+    }
+}
