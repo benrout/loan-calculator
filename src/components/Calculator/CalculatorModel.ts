@@ -23,9 +23,9 @@ export class CalculatorModel implements ICalculatorModel {
     @observable.ref productRestrictions = {};
     @observable errorMessage: string = '';
 
-    constructor(cfg: ICalculatorConfig) {
-        this.loanAmount = cfg.loanAmount || 10000;
-        this.loanDuration = cfg.loanDuration || 4;
+    constructor(cfg?: ICalculatorConfig) {
+        this.loanAmount = cfg && cfg.loanAmount || 10000;
+        this.loanDuration = cfg && cfg.loanDuration || 4;
     };
 
     @action handleLoanAmountChange = (e: React.FormEvent<HTMLInputElement>) => {
