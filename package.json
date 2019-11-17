@@ -1,7 +1,7 @@
 {
-  "name": "project-template",
+  "name": "iwoca-calculator",
   "version": "1.0.0",
-  "description": "Some description ",
+  "description": "A calculator to give the user a repayment schedule for multiple loan products",
   "main": "fuse.js",
   "dependencies": {
     "@types/node": "^12.12.8",
@@ -23,12 +23,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/benrout/project-template.git"
+    "url": "git+https://github.com/benrout/iwoca-calculator.git"
   },
-  "author": "Ben Rout <email@something.com>",
+  "author": "Ben Rout <benadamrout@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/benrout/project-template/issues"
+    "url": "https://github.com/benrout/iwoca-calculator/issues"
   },
-  "homepage": "https://github.com/benrout/project-template#readme"
+  "homepage": "https://github.com/benrout/iwoca-calculator#readme"
 }
