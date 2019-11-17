@@ -63,7 +63,7 @@ export class Calculator extends React.Component<ICalculatorProps> {
                             <div>(in £)</div>
                         </div>
                         {!loanAmount ?
-                            <div className="calculator-field__error">Please enter a value between £1 and £1,000,000</div>
+                            <div className="calculator-field__error">Please enter an amount to borrow</div>
                             : null}
                     </div>
 
@@ -74,7 +74,7 @@ export class Calculator extends React.Component<ICalculatorProps> {
                             <div>(in months)</div>
                         </div>
                         {!loanDuration ?
-                            <div className="calculator-field__error">Please enter a value between 1 and 24 months</div>
+                            <div className="calculator-field__error">Please enter a duration</div>
                             : null}
                     </div>
 
