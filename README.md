@@ -1,5 +1,11 @@
 # iwoca-calculator
 
+## Startup
+* Clone the repo
+* Run ```npm install```
+* Run ```npm start```
+* Go to [http://localhost:4444](http://localhost:4444)
+
 ## Technical Decisions
 * React - Used to provide a highly performant application with a responsive user experience
 * Mobx - for state management of React components
@@ -12,10 +18,10 @@
 * Extract input fields into their own components
 * Extract repayment rows into their own components
 * Restrict user input for loan amount requested to 2 decimal places
-* Add error handling if product restriction data cannot be retreived from endpoint. Alternatively inform the user that applicability for each product will need to be confirmed
 * Improve responsiveness of tables at mobile screen size
 * Improve accessiblity for screenreaders
 * Improve styling as currently very basic
 * Download source files and only what is needed from Bootstrap e.g. grid, layout. Alternatively a more lightweight library could be used
-* Minify code for production for improved performance 
-* Fix Websocket connection error when deployed
+* Minify code for production for improved performance
+* Extract formatCurrency method from LoanProductModel to utility functions
+* Handle error in console when Amount Requested / Loan Duration is blank
