@@ -9,6 +9,8 @@ export interface ICalculatorConfig {
 export interface ICalculatorModel {
     loanAmount: number;
     loanDuration: number;
+    isLoading: boolean;
+    error: string;
     productRestrictions;
     loadProductRestrictions(): Promise<void>;
     handleInputChange(e: React.FormEvent<HTMLInputElement>, field: string): void;
@@ -17,6 +19,8 @@ export interface ICalculatorModel {
 export class CalculatorModel implements ICalculatorModel {
     @observable loanAmount: number;
     @observable loanDuration: number;
+    @observable isLoading: boolean = false;
+    @observable error: string = '';
     @observable.ref productRestrictions = {};
 
     constructor(cfg?: ICalculatorConfig) {
@@ -29,6 +33,7 @@ export class CalculatorModel implements ICalculatorModel {
     };
 
     @action loadProductRestrictions = async () => {
+        this.isLoading = true;
         try {
             const response = await axios.get('http://www.mocky.io/v2/5d4aa9e93300006f000f5ea9');
             if (response.status === 200 && response.data) {
@@ -36,7 +41,9 @@ export class CalculatorModel implements ICalculatorModel {
             }
         } catch (error) {
             console.error(error);
+            this.error = "Product applicability data could not be loaded at this time."
         } finally {
+            this.isLoading = false;
         }
     }
 }

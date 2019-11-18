@@ -45,7 +45,7 @@ export class Calculator extends React.Component<ICalculatorProps> {
 
     render() {
         const { model } = this.props;
-        const { loanAmount, loanDuration, handleInputChange } = model;
+        const { loanAmount, loanDuration, handleInputChange, isLoading, error } = model;
 
         return (
             <div className="calculator">
@@ -70,14 +70,20 @@ export class Calculator extends React.Component<ICalculatorProps> {
                         {!loanDuration ? <div className="calculator-field__error">Please enter a duration</div> : null}
                     </div>
 
-                    <div className="row">
-                        <div className="col-lg-6">
-                            <LoanProduct model={this.rcfModel} />
+                    {isLoading ?
+                        <div>Loading product applicability data...</div>
+                        :
+                        <div className="row">
+                            <div className="col-lg-6">
+                                <LoanProduct model={this.rcfModel} />
+                            </div>
+                            <div className="col-lg-6">
+                                <LoanProduct model={this.blModel} />
+                            </div>
                         </div>
-                        <div className="col-lg-6">
-                            <LoanProduct model={this.blModel} />
-                        </div>
-                    </div>
+                    }
+
+                    {error ? <div>*{error}</div> : null}
                 </div>
 
             </div>
