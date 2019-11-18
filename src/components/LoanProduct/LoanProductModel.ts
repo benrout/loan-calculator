@@ -1,5 +1,5 @@
-import { ICalculatorModel } from "../Calculator/CalculatorModel";
 import { action, observable, computed } from "mobx";
+import { ICalculatorModel } from "../Calculator/CalculatorModel";
 import { IRepayment } from "./IRepayment";
 
 export interface ILoanProductConfig {
@@ -20,8 +20,10 @@ export interface ILoanProductModel {
     amountMax: number;
     durationMin: number;
     durationMax: number;
+    isAvailable: boolean;
     handleInterestChange(e: React.FormEvent<HTMLInputElement>): void;
     formatCurrency(num: number): string;
+    setProductRestrictions(product: string): void;
 }
 
 export class LoanProductModel implements ILoanProductModel {
@@ -44,6 +46,10 @@ export class LoanProductModel implements ILoanProductModel {
 
     @action handleInterestChange = (e: React.FormEvent<HTMLInputElement>) => {
         this.interestRate = e.currentTarget.valueAsNumber
+    }
+
+    @computed get isAvailable() {
+        return this.calculatorModel.loanAmount >= this.amountMin && this.calculatorModel.loanAmount <= this.amountMax && this.calculatorModel.loanDuration >= this.durationMin && this.calculatorModel.loanDuration <= this.durationMax;
     }
 
     @computed get totalInterest() {
@@ -85,7 +91,16 @@ export class LoanProductModel implements ILoanProductModel {
         return repayments;
     }
 
-    formatCurrency = (num: number, decimal: number = 0): string => {
-        return '£' + Number(num).toFixed(decimal);
+    formatCurrency = (num: number, decimal: number = 0, currency: string = "£"): string => {
+        return currency + Number(num).toFixed(decimal);
+    };
+
+    @action setProductRestrictions = (product: string) => {
+        if (this.calculatorModel.productRestrictions[product]) {
+            this.amountMin = this.calculatorModel.productRestrictions[product]['amount_min'];
+            this.amountMax = this.calculatorModel.productRestrictions[product]['amount_max'];
+            this.durationMin = this.calculatorModel.productRestrictions[product]['duration_min'];
+            this.durationMax = this.calculatorModel.productRestrictions[product]['duration_max'];
+        }
     };
 }
