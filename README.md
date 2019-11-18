@@ -16,7 +16,7 @@
 * Axios  - to provide cross-browser compatability (including IE11) for fetching product data from endpoint.
 * Fusebox - to compile SCSS and JS (down to ES5 for support with older browsers)
 
-## Improvements (if there was more time)
+## Improvements
 * Extract input fields into their own components
 * Extract repayment rows into their own components
 * Restrict user input for loan amount requested to 2 decimal places
