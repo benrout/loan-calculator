@@ -20,11 +20,7 @@ export class App extends React.Component {
 
 
     render() {
-        return (
-            <div>
-                <Calculator model={this.calculatorModel} />
-            </div>
-        );
+        return <Calculator model={this.calculatorModel} />
     }
 }
 
