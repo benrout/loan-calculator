@@ -1,9 +1,11 @@
-# iwoca-calculator
+# loan-calculator
 
 ## Startup
 * Clone the repo
-* Run ```npm install```
-* Run ```npm start```
+* In your console, run ```cd loan-calculator```
+* In the console, run ```npm install```
+* In the console, run ```npm start```
+* 
 * Go to [http://localhost:4444](http://localhost:4444)
 
 ## Technical Decisions
