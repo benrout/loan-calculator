@@ -4,7 +4,6 @@
 	"description": "A calculator to give the user a repayment schedule for multiple loan products",
 	"main": "fuse.js",
 	"dependencies": {
-		"@types/node": "^12.12.8",
 		"axios": "^0.19.0",
 		"mobx": "^5.15.0",
 		"mobx-react": "^6.1.4",
@@ -12,6 +11,7 @@
 		"react-dom": "^16.12.0"
 	},
 	"devDependencies": {
+		"@types/node": "^12.12.8",
 		"@types/react": "^16.9.11",
 		"@types/react-dom": "^16.9.4",
 		"fuse-box": "^3.7.1",
