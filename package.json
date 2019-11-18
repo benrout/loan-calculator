@@ -1,5 +1,5 @@
 {
-	"name": "iwoca-calculator",
+	"name": "loan-calculator",
 	"version": "1.0.0",
 	"description": "A calculator to give the user a repayment schedule for multiple loan products",
 	"main": "fuse.js",
@@ -19,18 +19,18 @@
 		"typescript": "^3.7.2"
 	},
 	"scripts": {
-		"deploy": "surge --domain iwoca-calculator.surge.sh/",
+		"deploy": "surge --domain loan-calculator-br.surge.sh/",
 		"start": "node fuse.js",
 		"test": "jest"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/benrout/iwoca-calculator.git"
+		"url": "git+https://github.com/benrout/loan-calculator.git"
 	},
 	"author": "Ben Rout <benadamrout@gmail.com>",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/benrout/iwoca-calculator/issues"
+		"url": "https://github.com/benrout/loan-calculator/issues"
 	},
-	"homepage": "https://github.com/benrout/iwoca-calculator#readme"
+	"homepage": "https://github.com/benrout/loan-calculator#readme"
 }
