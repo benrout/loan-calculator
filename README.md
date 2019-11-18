@@ -9,9 +9,13 @@
 * Fusebox - to compile SCSS and JS (down to ES5 for support with older browsers)
 
 ## Improvements (if there was more time)
-* Bootstrap - Instead of using a CDN I would download the source files and compile only what is needed e.g. grid, layout etc. Alternatively a more lightweight library could be used
+* Extract input fields into their own components
+* Extract repayment rows into their own components
 * Restrict user input for loan amount requested to 2 decimal places
+* Add error handling if product restriction data cannot be retreived from endpoint. Alternatively inform the user that applicability for each product will need to be confirmed
 * Improve responsiveness of tables at mobile screen size
-* Add error handling if product restriction data cannot be retreived from endpoint
 * Improve accessiblity for screenreaders
 * Improve styling as currently very basic
+* Download source files and only what is needed from Bootstrap e.g. grid, layout. Alternatively a more lightweight library could be used
+* Minify code for production for improved performance 
+* Fix Websocket connection error when deployed
